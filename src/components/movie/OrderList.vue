@@ -12,7 +12,7 @@
         >
           <div class="movie-list">
             <movie-item v-for="(item, index) in list" :key="index" :obj="item"></movie-item>
-            <div class="noOrderContent" v-if="list.length < 1 " :finished="finished == true">
+            <div class="noOrderContent" v-if="list.length < 1 " :finished="finished">
               <ul>
                 <li>
                   <i>
@@ -34,6 +34,7 @@
               </ul>
             </div>
           </div>
+          <div class="noData" v-show="list.length > 0 && finished">到底了！</div>
         </van-list>
       </div>
     </div>
